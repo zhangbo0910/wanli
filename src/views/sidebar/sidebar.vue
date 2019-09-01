@@ -1,13 +1,17 @@
 <template>
   <div>
     <a-menu mode="inline" :openKeys="openKeys" @openChange="onOpenChange" style="width: 300px" theme="dark">
-
+   
       <a-sub-menu key="sub1">
+        
         <span slot="title">
+           <router-link to="/home">
           <a-icon type="home" />
-          <span><router-link to="/home">主页</router-link></span>
+          <span>主页</span>
+          </router-link>
         </span>
       </a-sub-menu>
+    
 
       <a-sub-menu key="sub2" >
         <span slot="title">

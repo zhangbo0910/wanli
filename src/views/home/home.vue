@@ -10,7 +10,8 @@
           <Hends></Hends>
         </a-layout-header>
         <a-layout-content class="padding_">
-          <router-view></router-view>
+          <router-view>
+          </router-view>
         </a-layout-content>
       </a-layout>
     </a-layout>

@@ -30,7 +30,7 @@
     </a-row>
     <!-- 表格 -->
     <a-table :columns="columns" :dataSource="data" bordered>
-    <template v-for="col in ['name', 'age', 'address']" :slot="col" slot-scope="text, record, index">
+    <template v-for="col in ['name', 'age', 'address']" :slot="col" slot-scope="text, record,index">
       <div :key="col">
         <a-input
           v-if="record.editable"
@@ -60,33 +60,50 @@
 
 <script>
 const columns = [{
+  title: '',
+  dataIndex: 'num',
+  width: '50px',
+  scopedSlots: { customRender: 'num' },
+},{
   title: '线路名称',
   dataIndex: 'xianlumingcheng',
-  width: '25%',
-  scopedSlots: { customRender: '线路名称' },
+  // width: '25%',
+  scopedSlots: { customRender: 'mingcheng' },
 }, {
   title: '线路类型',
-  dataIndex: 'age',
-  width: '15%',
-  scopedSlots: { customRender: '线路类型' },
+  dataIndex: 'xianluleixing',
+  // width: '15%',
+  scopedSlots: { customRender: 'leixing' },
 }, {
   title: '最高速度（km/h）',
-  dataIndex: 'address',
-  width: '40%',
-  scopedSlots: { customRender: '最高速度（km/h）' },
+  dataIndex: 'zuigaosudu',
+  // width: '40%',
+  scopedSlots: { customRender: 'sudu' },
 }, {
   title: '开始时间  ',
-  dataIndex: 'operation',
-  scopedSlots: { customRender: '开始时间' },
+  dataIndex: 'kaishishijian',
+  scopedSlots: { customRender: 'kaishishijian' },
+}, {
+  title: '结束时间',
+  dataIndex: 'jieshushijian',
+  scopedSlots: { customRender: 'jieshushijian' },
+}, {
+  title: '操作',
+  dataIndex: 'caozuo',
+  scopedSlots: { customRender: 'shijian' },
 }]
 
 const data = []
 for (let i = 0; i < 100; i++) {
   data.push({
+    num:`${i}`,
     key: i.toString(),
-    name: `Edrward ${i}`,
-    age: 32,
-    address: `London Park no. ${i}`,
+    xianlumingcheng:`京广路`,
+    xianluleixing:"线路" ,
+    zuigaosudu:`190km/h`,
+    kaishishijian: `2000-20-13`,
+    jieshushijian:`2019-20-10`,
+    caozuo:`btn`
   })
 }
 
@@ -95,7 +112,7 @@ export default {
     this.cacheData = data.map(item => ({ ...item }))
     return {
       data,
-      columns
+      columns,
     }
   },
   methods: {
@@ -140,7 +157,23 @@ export default {
 
   },
   components: {
+    //   rowSelection() {
+    //   const { selectedRowKeys } = this;
+    //   return {
+    //     onChange: (selectedRowKeys, selectedRows) => {
+    //       console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+    //     },
+    //     getCheckboxProps: record => ({
+    //       props: {
+    //         disabled: record.name === 'Disabled User', // Column configuration not to be checked
+    //         name: record.name,
+    //       }
+    //     }),
+    //   }
+    // }
 
+
+      
   }
 }
 </script>
