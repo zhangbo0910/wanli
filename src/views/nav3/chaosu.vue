@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-row :gutter="15" class="picture">
+<a-row :gutter="15" class="picture">
       <a-col class="gutter-row" :span="5">
         <div class="gutter-box">
           公司名称：
@@ -26,7 +26,7 @@
       <a-col class="gutter-row" :span="2">
         <div class="gutter-box">起始时间:</div>
       </a-col>
-      <a-col class="gutter-row" :span="5">
+ <a-col class="gutter-row" :span="5">
         <div class="gutter-box"><a-range-picker @change="onChange" /></div>
       </a-col>
 
@@ -41,13 +41,13 @@
 export default {
   data() {
     return {
-         onChange(date, dateString) {
-        console.log(date, dateString);
-    } 
+
     }
   },
   methods: {
-
+       onChange(date, dateString) {
+      console.log(date, dateString);
+    }
   },
   components: {
 
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style scoped>
-  .gutter-box {
+.gutter-box {
   /* background: #00A0E9; */
   padding: 5px 0;
   font-size:18px;

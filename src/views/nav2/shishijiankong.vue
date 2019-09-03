@@ -8,12 +8,9 @@
         <div class="amap-page-container">
       <el-amap ref="map" vid="amapDemo" :amap-manager="amapManager" :center="center" :zoom="zoom" :plugin="plugin" :events="events" class="amap-demo">
       </el-amap>
-
-      <!-- <div class="toolbar">
-        <button @click="getMap()">get map</button>
-      </div> -->
     </div>
       </a-col>
+      <a-col span="6" class="bag"> 123124324324523</a-col>
     </a-row>
   </div>
 </template>
@@ -27,11 +24,12 @@ export default {
     return {
       amapManager,
           zoom: 12,
-          center: [121.59996, 31.197646],
+          center: [113.6249300000,34.7472500000],
           events: {
             init: (o) => {
-              console.log(o.getCenter())
-              console.log(this.$refs.map.$$getInstance())
+              // o 是高德地图定位插件实例
+              console.log(o.getCenter()),
+              console.log(this.$refs.map.$$getInstance()),
               o.getCity(result => {
                 console.log(result)
               })
@@ -57,12 +55,12 @@ export default {
     };
   },
   methods: {
-      // getMap() {
-      //     // amap vue component
-      //     console.log(amapManager._componentMap);
-      //     // gaode map instance
-      //     console.log(amapManager._map);
-      //   }
+      getMap() {
+          // amap vue component
+          console.log(amapManager._componentMap);
+          // gaode map instance
+          console.log(amapManager._map);
+        }
 
   },
   components: {}
@@ -87,5 +85,8 @@ export default {
 }
 .amap-demo {
       height:788px;
+    }
+    .bag{
+      background: #000;
     }
 </style>
