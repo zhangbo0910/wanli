@@ -10,7 +10,23 @@
       </el-amap>
     </div>
       </a-col>
-      <a-col span="6" class="bag"> 123124324324523</a-col>
+      <a-col span="6" class="pad" style="background:#c6ddea;">
+        <div class="tab_box">
+              <a-button>车辆</a-button>
+              <a-button>关注</a-button>
+        </div>
+        <div class="search_">
+        <select  style="width:28%;height:32px;border-radius:4px;">
+            <option>车牌号</option>
+            <option>卡号</option>
+        </select>
+         <a-input placeholder="单行输入" style="margin:0 5px;width:50%;"/>
+          <a-button>查询</a-button>
+        </div>
+          <div class="search_">
+            <a-button class="btn_" v-for="(item,index) in btnarr" :key="index">{{item}}</a-button>
+          </div>
+      </a-col>
     </a-row>
   </div>
 </template>
@@ -22,6 +38,8 @@ import VueAMap from 'vue-amap';
 export default {
   data() {
     return {
+      btnarr:["全部","行驶","停止","离线","刷新"],
+      currency:'',
       amapManager,
           zoom: 12,
           center: [113.6249300000,34.7472500000],
@@ -50,6 +68,14 @@ export default {
                 console.log(o);
               }
             }
+          },
+          {
+            pName: 'OverView',
+            events: {
+              init(instance) {
+                console.log(instance);
+              }
+            }
           }]
 
     };
@@ -60,7 +86,10 @@ export default {
           console.log(amapManager._componentMap);
           // gaode map instance
           console.log(amapManager._map);
-        }
+        },
+        handleCurrencyChange (currency) {
+          console.log(currency);
+        },
 
   },
   components: {}
@@ -86,7 +115,31 @@ export default {
 .amap-demo {
       height:788px;
     }
-    .bag{
-      background: #000;
-    }
+.pad{
+      padding: 20px 30px;
+}
+.tab_box{
+  height:120px;
+  background: #95a0a6;
+  border-radius:10px;
+  text-align: center;
+}
+.tab_box button{
+  width:85px;
+  height:45px;
+  margin-top:70px;
+  font-size: 20px;
+}
+.search_{
+  display: flex;
+  margin-top: 10px;
+}
+.btn_{
+  width:60px;
+  margin-right: 10px;
+  padding: 0;
+}
+.search_ :last-child{
+  margin: 0;
+}
 </style>

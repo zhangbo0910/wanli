@@ -4,12 +4,14 @@ import Login from '@/views/login/login.vue'
 import Home from '@/views/home/home.vue'
 // import Sidebar from '@/views/sidebar/sidebar.vue'
 import Index from '@/views/nav1/index.vue'                    //1.主页
+
 import Shishijiankong from '@/views/nav2/shishijiankong.vue'  //2.车辆管理
 import Xianluguanli from '@/views/nav2/xianluguanli.vue'
 import Zhaopianguanli from '@/views/nav2/zhaopianguanli.vue'
 import Diaoduchaxun from '@/views/nav2/diaoduchaxun.vue'
 import Xianluguanli_ from '@/views/nav2/circuit/xianluguanli_.vue'  //线路管理子路由
 import Bangdingluxian from '@/views/nav2/circuit/bangdingluxian.vue'
+
 import Chaosutongji from '@/views/nav3/chaosu.vue'      //3.统计查询  
 import Pilao from '@/views/nav3/pilaojiashi.vue'
 import Shangxian from '@/views/nav3/shangxian.vue'
@@ -18,8 +20,13 @@ import AZ_weishangxian from '@/views/nav3/az_weishangxian.vue'
 import JR_weishangxian from '@/views/nav3/jr_weishangxian.vue'
 import Guijiwanzheng from '@/views/nav3/guijiwanzheng.vue'
 import Shujvhege from '@/views/nav3/shujvhege.vue'
-import Gaojing from '@/views/nav4/gaojing.vue'
+
+import Gaojing from '@/views/nav4/gaojing.vue'//4.告警处理
 import Xiansu from '@/views/nav4/xiansu.vue'
+
+import Weihu from '@/views/nav6/weihu.vue'//6.规则管理
+import Fenpei from '@/views/nav6/fenpei.vue'
+import Shengji from '@/views/nav6/Shengji.vue'
 
 Vue.use(Router)
 
@@ -117,6 +124,21 @@ export default new Router({
           path: '/xiansu',
           name: 'Xiansu',
           component: Xiansu
+        },
+        {//-------6---------
+          path: '/weihu',
+          name: 'Weihu',
+          component: Weihu
+        },
+        {
+          path: '/fenpei',
+          name: 'Fenpei',
+          component: Fenpei
+        },
+        {
+          path: '/shengji',
+          name: 'Shengji',
+          component: Shengji
         }
       ]
     }

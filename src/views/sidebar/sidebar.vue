@@ -89,9 +89,6 @@
           <span>证据查询</span>
         </span>
         <a-menu-item key="13">Option 9</a-menu-item>
-        <a-menu-item key="14">Option 10</a-menu-item>
-        <a-menu-item key="15">Option 11</a-menu-item>
-        <a-menu-item key="16">Option 12</a-menu-item>
       </a-sub-menu>
 
       <a-sub-menu key="sub6">
@@ -99,10 +96,9 @@
           <a-icon type="setting" />
           <span>规则管理</span>
         </span>
-        <a-menu-item key="17">Option 9</a-menu-item>
-        <a-menu-item key="18">Option 10</a-menu-item>
-        <a-menu-item key="19">Option 11</a-menu-item>
-        <a-menu-item key="20">Option 12</a-menu-item>
+        <a-menu-item key="17"><router-link to="/weihu">规则维护</router-link></a-menu-item>
+        <a-menu-item key="18"><router-link to="/fenpei">规则分配</router-link></a-menu-item>
+        <a-menu-item key="19"><router-link to="/shengji">自动升级</router-link></a-menu-item>
       </a-sub-menu>
     </a-menu>
   </div>
